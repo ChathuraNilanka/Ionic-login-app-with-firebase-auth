@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Classes
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
+  <ion-card *ngFor="let clz of classes" (click)="itemTapped(clz)">
+      <img src="{{clz.imageUrl}}">
+      <ion-card-content>
+        <h3>{{clz.name}}</h3>
+      </ion-card-content>
+    
+  </ion-card>
+</ion-content>
+
+
+
+
